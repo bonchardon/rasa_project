@@ -1,0 +1,131 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: currency_rate
+  examples: |
+    - what is the current currency rate of [hryvnia](currency) to [dollar]?
+    - what is the current currency rate of [dollar](currency) to [euro](currency)?
+    - I need currency exchange rate of [euro](currency)
+    - what is the [USD](currency) buying rate today?
+    - what is the [UAH](currency) buying rate these days? 
+
+- intent: currency_rate_change
+  examples: |
+    - [USD](currency) buying rate for a period of time
+    - [EUR](currency) exchange rate for the past month
+    - how has [UAH](currency) exchange rate changed for the last couple of days? 
+    - [euro](currency) exchange these days 
+
+- intent: lowest_highest_currencies 
+  examples: |
+    - what are the most in demand currencies these days?
+    - what is the cheapest currency in the world?
+    - what is the weakest currency?
+    - list the strongest currencies in the world
+    - cheapest and highest currency in the world 
+
+- intent: currencies_comparison
+  examples: |
+    - currency rates for [euro](currency) and [dollar](currency)
+    - currency rates for the top highest currencies
+    - compare best exchange rates
+    - what is the [USD](currency) buying rate today compared to [EUR](currency)?
+    - what is the [hryvnia](currency) buying rate these days compared to [dollar](currency)? 
+
+- intent: news 
+  examples: |
+    - foreign exchange market news 
+    - last FX market news 
+
+
+
+
