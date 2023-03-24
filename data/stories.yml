@@ -1,0 +1,53 @@
+version: "3.1"
+
+stories:
+
+- story: #1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: currency_rate
+  - slot_was_set:
+    - currencies: USD
+  - action: utter_currency_rate
+
+- story: #2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: currency_rate_change
+  - action: utter_currency_rate_change
+  - slot_was_set:
+    - customer_satisfactory: True 
+  - action: utter_happy
+
+- story: #3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: currency_rate
+  - action: utter_highest_currencies
+  - slot_was_set: 
+    - customer_satisfactory: False
+  - action: utter_cheer_up    
+
+- story: #4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: currencies_comparison
+  - action: utter_currencies_comparison
+
+- story: #5
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: news
+  - slot_was_set: 
+    - topic: forex
+  - action: utter_news
+  - intent: news
+  - slot_was_set: 
+    - topic: forex
+  - action: utter_news
+
