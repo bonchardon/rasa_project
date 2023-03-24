@@ -1,0 +1,103 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - currency_rate
+  - currency_rate_change
+  - lowest_highest_currencies 
+  - currencies_comparison
+  - news
+  - EXTERNAL_news
+
+entities: 
+  - check_news
+
+slots: 
+  check_news:
+    type: text
+    influence_conversation: false
+    - type: from_entity
+      entity: check_news
+  currencies:
+    type: categorical 
+    values: 
+      - USD
+      - EUR
+      - JPY
+      - UAH
+      - GBP
+      - CHF
+      - OMR
+      - BSD
+    mappings:
+    - type: custom
+  topic:
+    type: text
+    # this slot will influence conversation, 
+    # so the bot could dwell on the topic 
+    influence conversation: true
+  customer_satisfactory: 
+    type: bool
+    mappings:
+    - type: custom
+
+responses:
+  utter_greet:
+  - text: "Hello! How can I help you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_news:
+  - text: "action_news"
+
+  utter_currency_rate:
+  - text: action_current_currency_rate
+
+  utter_currency_rate_change:
+  - text: action_currency_rate_change
+
+  utter_highest_currencies:
+  - text: action_highest_currencies
+
+  utter_currencies_comparison:
+  - text: action_currencies_comparison
+
+  utter_news:
+  - text: action_news
+ 
+  utter_notify: 
+  - text: "{Currency} rate is 5% up!}
+  - text: action_notification
+
+actions:
+- action_current_currency_rate
+- action_currency_rate_change
+- action_highest_currencies
+- action_currencies_comparison
+- action_news
+- action_notification
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
